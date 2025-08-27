@@ -1,0 +1,144 @@
+        
+        *{
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #8E8B89;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        .calculator {
+            background: #000;
+            border-radius: 15px;
+            padding: 20px;
+            display: grid;
+            grid-template-rows: auto 1fr;
+            width: 500px;
+            margin: 0 auto;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+
+        }
+
+        .display-count {
+            color: white;
+            font-size: 1rem;
+            text-align: left;
+            padding: 5px;
+            min-height: 20px;
+        }
+
+        .expression-display {
+            color: gray;
+            font-size: 1rem;
+            text-align: right;
+            min-height: 20px;
+            padding: 5px;
+            transition: 0.6s;
+        }
+
+        .display {
+            color: white;
+            font-size: 2.5rem;
+            text-align: right;
+            padding: 10px;
+            min-height: 50px;
+            overflow-x: auto;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 5px;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 20px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 8px;
+            background: black;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.2s ease, background 0.2s ease;
+
+        }
+
+        button:hover {
+            background: #333;
+            transform: scale(1.1);
+        }
+
+        .operator {
+            color: orange;
+        }
+
+        .equal {
+            background: #ff4d2d;
+            color: white;
+            grid-column: span 1;
+        }
+
+        .equal:hover {
+            background: #e03e20;
+        }
+
+        .del {
+            color: red;
+        }
+
+        .clearbtn {
+            font-weight: 600;
+
+        }
+
+        #loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom right, #8E8B89, #000);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .spinner {
+            position: relative;
+
+            border: 6px solid #f3f3f3;
+            border-top: 6px solid #8E8B89;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            animation: spin 1s linear infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loader-text {
+            position: absolute;
+            font-size: 12px;
+            color: white;
+            text-align: center;
+            width: 80px;
+            line-height: 1.2;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
